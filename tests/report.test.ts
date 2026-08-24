@@ -12,9 +12,11 @@ describe("report: flags + budgets serialize", () => {
     expect(report.budgets.anomaly).toBe(0);
     expect(typeof report.budgets.ropeWear).toBe("number");
     expect(typeof report.budgets.crewSafetyIncidents).toBe("number");
-    const parsed = JSON.parse(JSON.stringify(report));
+    const json = JSON.stringify(report);
+    const parsed = JSON.parse(json) as typeof report;
     expect(parsed.win).toBe(true);
     expect(parsed.flagsUsed).toEqual(report.flagsUsed);
+    expect(parsed.budgets.laborTimePersonDays).toBe(report.budgets.laborTimePersonDays);
     expect(report.summary).toMatch(/WIN/);
     expect(report.summary).toMatch(/Labor:/);
     expect(report.summary).toMatch(/Anomaly: 0/);
@@ -33,8 +35,13 @@ describe("report: flags + budgets serialize", () => {
   it("buildReport is a plain-data snapshot", () => {
     const { world } = runScriptedDemo();
     const snap = buildReport({
-      checks: world.checks(), flags: world.flags, flagsUsed: world.flagsUsed,
-      budgets: world.budgets, failures: world.failures, timeline: world.timeline, preset: world.preset,
+      checks: world.checks(),
+      flags: world.flags,
+      flagsUsed: world.flagsUsed,
+      budgets: world.budgets,
+      failures: world.failures,
+      timeline: world.timeline,
+      preset: world.preset,
     });
     expect(snap.preset).toBe("strict-neolithic");
     expect(snap.timeline.length).toBeGreaterThan(5);

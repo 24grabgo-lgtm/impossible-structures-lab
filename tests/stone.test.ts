@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { G, LINTEL, UPRIGHT } from "../src/sim/constants.ts";
-import { createStone, gravityMomentNm, lintelMassKg, uprightMassKg, weightN, worldCom } from "../src/sim/stone.ts";
+import {
+  createStone,
+  gravityMomentNm,
+  lintelMassKg,
+  uprightMassKg,
+  weightN,
+  worldCom,
+} from "../src/sim/stone.ts";
 import { haulForceN } from "../src/sim/haul.ts";
 
 describe("stone body: mass, CoM, friction, tip", () => {
@@ -28,9 +35,12 @@ describe("stone body: mass, CoM, friction, tip", () => {
 
   it("gravity moment shrinks toward plumb", () => {
     const s = createStone("A", { x: 0, y: 0, z: 0 });
-    s.tiltDeg = 30; const m30 = gravityMomentNm(s);
-    s.tiltDeg = 80; const m80 = gravityMomentNm(s);
-    s.tiltDeg = 90; const m90 = gravityMomentNm(s);
+    s.tiltDeg = 30;
+    const m30 = gravityMomentNm(s);
+    s.tiltDeg = 80;
+    const m80 = gravityMomentNm(s);
+    s.tiltDeg = 90;
+    const m90 = gravityMomentNm(s);
     expect(m30).toBeGreaterThan(m80);
     expect(Math.abs(m90)).toBeLessThan(1);
     expect(weightN(s)).toBeCloseTo(s.massKg * G, 5);
@@ -41,6 +51,7 @@ describe("stone body: mass, CoM, friction, tip", () => {
     const mu = 0.2;
     const level = haulForceN(mass, mu, 0);
     expect(level).toBeCloseTo(mu * mass * G, 0);
-    expect(haulForceN(mass, mu, 3)).toBeGreaterThan(level);
+    const grade = haulForceN(mass, mu, 3);
+    expect(grade).toBeGreaterThan(level);
   });
 });
