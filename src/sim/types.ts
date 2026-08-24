@@ -31,93 +31,37 @@ export type PresetId = "strict-neolithic" | "open-lab" | "precision-bam-lite";
 export interface Vec3 { x: number; y: number; z: number; }
 
 export interface StoneState {
-  id: string;
-  kind: StoneKind;
-  role: StoneRole;
-  massKg: number;
-  length: number;
-  width: number;
-  thickness: number;
-  comOffset: Vec3;
-  position: Vec3;
-  tiltDeg: number;
-  yawDeg: number;
-  zone: Zone;
-  extracted: boolean;
-  fractured: boolean;
-  flatness: number;
-  hasTenon: boolean;
-  hasMortice: boolean;
-  packed: boolean;
-  seated: boolean;
-  plumbDeg: number;
-  fallen: boolean;
+  id: string; kind: StoneKind; role: StoneRole; massKg: number;
+  length: number; width: number; thickness: number;
+  comOffset: Vec3; position: Vec3; tiltDeg: number; yawDeg: number;
+  zone: Zone; extracted: boolean; fractured: boolean; flatness: number;
+  hasTenon: boolean; hasMortice: boolean; packed: boolean; seated: boolean;
+  plumbDeg: number; fallen: boolean;
 }
 
 export interface SocketState {
-  id: "A" | "B";
-  position: Vec3;
-  depth: number;
-  hasVerticalFace: boolean;
-  hasRamp: boolean;
-  rampAngleDeg: number;
-  packed: boolean;
-  rubbleQuality: number;
+  id: "A" | "B"; position: Vec3; depth: number;
+  hasVerticalFace: boolean; hasRamp: boolean; rampAngleDeg: number;
+  packed: boolean; rubbleQuality: number;
 }
 
 export interface Budgets {
-  laborTimePersonDays: number;
-  laborRemaining: number;
-  crewAssigned: number;
-  crewAvailable: number;
-  timber: number;
-  timberSpent: number;
-  ropeWear: number;
-  ropeCapacityN: number;
-  crewSafetyIncidents: number;
-  anomaly: number;
+  laborTimePersonDays: number; laborRemaining: number;
+  crewAssigned: number; crewAvailable: number;
+  timber: number; timberSpent: number;
+  ropeWear: number; ropeCapacityN: number;
+  crewSafetyIncidents: number; anomaly: number;
 }
 
-export interface FailureEvent {
-  id: FailureId;
-  stage: string;
-  message: string;
-  atPersonDays: number;
-}
-
+export interface FailureEvent { id: FailureId; stage: string; message: string; atPersonDays: number; }
 export interface TimelineEvent { beat: string; detail: string; }
-
-export interface MethodFlagDef {
-  id: MethodId;
-  name: string;
-  stage: string;
-  tier: MethodTier;
-  enabled: boolean;
-}
-
-export interface WinCheck {
-  uprightA: boolean;
-  uprightB: boolean;
-  lintel: boolean;
-  joints: boolean;
-  pass: boolean;
-  notes: string[];
-}
+export interface MethodFlagDef { id: MethodId; name: string; stage: string; tier: MethodTier; enabled: boolean; }
+export interface WinCheck { uprightA: boolean; uprightB: boolean; lintel: boolean; joints: boolean; pass: boolean; notes: string[]; }
 
 export interface RunReport {
-  win: boolean;
-  checks: WinCheck;
-  flagsUsed: MethodId[];
-  flagsEnabled: MethodId[];
-  budgets: Budgets;
-  failures: FailureEvent[];
-  timeline: TimelineEvent[];
-  preset: PresetId;
-  summary: string;
+  win: boolean; checks: WinCheck; flagsUsed: MethodId[]; flagsEnabled: MethodId[];
+  budgets: Budgets; failures: FailureEvent[]; timeline: TimelineEvent[];
+  preset: PresetId; summary: string;
 }
 
-export interface ActionResult {
-  ok: boolean;
-  failure?: FailureEvent;
-  detail: string;
-}
+export interface ActionResult { ok: boolean; failure?: FailureEvent; detail: string; }

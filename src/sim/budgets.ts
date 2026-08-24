@@ -1,24 +1,16 @@
 import {
-  STARTING_CREW,
-  STARTING_PERSON_DAYS,
-  STARTING_ROPE_CAPACITY_N,
-  STARTING_ROPE_WEAR,
-  STARTING_TIMBER,
+  STARTING_CREW, STARTING_PERSON_DAYS, STARTING_ROPE_CAPACITY_N,
+  STARTING_ROPE_WEAR, STARTING_TIMBER,
 } from "./constants.ts";
 import type { Budgets } from "./types.ts";
 
 export function createBudgets(crew = STARTING_CREW): Budgets {
   return {
-    laborTimePersonDays: 0,
-    laborRemaining: STARTING_PERSON_DAYS,
-    crewAssigned: crew,
-    crewAvailable: crew,
-    timber: STARTING_TIMBER,
-    timberSpent: 0,
-    ropeWear: STARTING_ROPE_WEAR,
-    ropeCapacityN: STARTING_ROPE_CAPACITY_N,
-    crewSafetyIncidents: 0,
-    anomaly: 0,
+    laborTimePersonDays: 0, laborRemaining: STARTING_PERSON_DAYS,
+    crewAssigned: crew, crewAvailable: crew,
+    timber: STARTING_TIMBER, timberSpent: 0,
+    ropeWear: STARTING_ROPE_WEAR, ropeCapacityN: STARTING_ROPE_CAPACITY_N,
+    crewSafetyIncidents: 0, anomaly: 0,
   };
 }
 
