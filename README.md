@@ -10,18 +10,19 @@
 
 ## Run the prototype
 
-Install, test, and start the lab:
+```bash
+npm install
+npm test
+npm run dev
+```
 
-    npm install && npm test && npm run dev
+Open the Vite URL (http://localhost:5173). **Run demo** executes a scripted win (extract, haul, ramped sockets, A-frame raise + pack, crib lintel, seat + test load). Play the same loop by hand from the action bar. **Demo: rope snap** is a named failure. **Export JSON** / **Show report** dumps method flags and budgets (labor-time, timber, rope wear, crew safety, anomaly).
 
-- `npm test` — vitest (win / fail / report, no WebGL)
-- `npm run typecheck` — tsc --noEmit
-- `npm run build` — production bundle
-- `npm run dev` — Vite at http://localhost:5173
+A 2-minute human attempt: Extract 3 blanks → Haul A to site → Dig ramped socket → Tip → A-frame raise + pack → repeat for B → Haul lintel → Build crib → Crib lintel up → Seat → Test load → Show report.
 
-Open the lab, pick a method preset (**Strict Neolithic** is the default), then either **Run demo** or play the strip: extract → haul → ramped socket → A-frame raise + pack → crib lintel → seat. The report lists which method flags were on and the labor / timber / rope / safety / anomaly budgets. Speculative flags are labeled and cost anomaly points; they are never required.
+The unnamed default operator is **Eira** (balanced / story anchor). Character select, Bare/True kits, and Soft Trial are deferred — solo on the strip is the game.
 
-A 2-minute human attempt: Extract 3 blanks → Haul A to site → Dig ramped socket → Tip → A-frame raise + pack → repeat for B → Haul lintel → Build crib → Crib lintel up → Seat → Show report. Uncheck **R2 A-frame** after tipping to feel a rope snap.
+`npm run typecheck` and `npm run build` are wired for CI (Node 22).
 
 ---
 
