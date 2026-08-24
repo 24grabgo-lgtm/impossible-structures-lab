@@ -1,6 +1,13 @@
 import { anomalyCost, enabledIds } from "./flags.ts";
 import type {
-  Budgets, FailureEvent, MethodFlagDef, MethodId, PresetId, RunReport, TimelineEvent, WinCheck,
+  Budgets,
+  FailureEvent,
+  MethodFlagDef,
+  MethodId,
+  PresetId,
+  RunReport,
+  TimelineEvent,
+  WinCheck,
 } from "./types.ts";
 
 export interface ReportInput {
@@ -40,8 +47,15 @@ export function buildReport(input: ReportInput): RunReport {
         `Anomaly: ${budgets.anomaly}`,
       ].join("\n");
   return {
-    win, checks: input.checks, flagsUsed, flagsEnabled, budgets,
-    failures: [...input.failures], timeline: [...input.timeline], preset: input.preset, summary,
+    win,
+    checks: input.checks,
+    flagsUsed,
+    flagsEnabled,
+    budgets,
+    failures: [...input.failures],
+    timeline: [...input.timeline],
+    preset: input.preset,
+    summary,
   };
 }
 
