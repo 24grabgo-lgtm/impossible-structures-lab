@@ -96,7 +96,7 @@ export class LabWorld {
       s.extracted = true; s.fractured = false;
       s.flatness = Math.max(s.flatness, 0.55); s.zone = "quarry";
     }
-    this.note("extract", "Received quarry blanks. Extract skipped.");
+    this.note("extract", "Received quarry blanks (Eira default operator). Extract skipped.");
     return { ok: true, detail: "Three blanks on the quarry pad." };
   }
 
