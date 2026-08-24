@@ -73,6 +73,7 @@ export function plumbErrorDeg(stone: StoneState): number {
 
 export function isStableUpright(stone: StoneState, plumbTolDeg: number): boolean {
   if (!stone.extracted || stone.fractured || stone.fallen) return false;
-  if (!stone.packed || stone.kind !== "upright") return false;
+  if (!stone.packed) return false;
+  if (stone.kind !== "upright") return false;
   return plumbErrorDeg(stone) <= plumbTolDeg && stone.tiltDeg >= 88;
 }
