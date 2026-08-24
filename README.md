@@ -8,6 +8,23 @@
 
 ---
 
+## Run the prototype
+
+Install, test, and start the lab:
+
+    npm install && npm test && npm run dev
+
+- `npm test` — vitest (win / fail / report, no WebGL)
+- `npm run typecheck` — tsc --noEmit
+- `npm run build` — production bundle
+- `npm run dev` — Vite at http://localhost:5173
+
+Open the lab, pick a method preset (**Strict Neolithic** is the default), then either **Run demo** or play the strip: extract → haul → ramped socket → A-frame raise + pack → crib lintel → seat. The report lists which method flags were on and the labor / timber / rope / safety / anomaly budgets. Speculative flags are labeled and cost anomaly points; they are never required.
+
+A 2-minute human attempt: Extract 3 blanks → Haul A to site → Dig ramped socket → Tip → A-frame raise + pack → repeat for B → Haul lintel → Build crib → Crib lintel up → Seat → Show report. Uncheck **R2 A-frame** after tipping to feel a rope snap.
+
+---
+
 ## PoC lock
 
 | Axis | Choice |
@@ -47,4 +64,4 @@ Source → Work → Move → Place → Fail honestly → Revise → Retry → **
 
 ---
 
-*Design package: executed. Next compiler: your engine.*
+*Design package: executed. v0 engine: playable trilithon loop in this repo (browser prototype).*
